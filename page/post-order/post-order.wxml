@@ -1,0 +1,31 @@
+<view class="page">
+  <view class="page__hd">
+   <image class="login-logo" src="../../image/logo/logo.png"></image>
+
+    <text class="page__title">meetingUUU</text>
+     <text class="page__title">预定会议室</text>
+    <text class="page__desc">表单</text>
+     
+ <form bindsubmit="formSubmit">
+   <view class="section">
+      <view class="section__title">会议主题</view>
+      <input name="theme" placeholder="please input here" />
+    </view>
+
+    <view class="section">
+      <view class="section__title">参与人数</view>
+      <input name="number"  placeholder="please input here" />
+    </view>
+
+    <view class="section">
+      <view class="section__title">说明用途</view>
+      <input name="explain_use" placeholder="please input here" />
+    </view>
+
+   <view class="btn-area">
+      <button class="page-body-button" type="primary" bindtap="login" formType="submit" >提交信息</button>
+
+    </view>
+</form>
+  </view>
+</view>

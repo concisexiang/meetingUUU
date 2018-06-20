@@ -1,0 +1,39 @@
+<import src="../API/common/header.wxml" />
+<import src="../API/common/footer.wxml" />
+
+<view class="container">
+  <template is="header" data="{{title: '用户当前状态'}}"/>
+
+  <view class="page-body">
+    <view class="page-body-wrapper">
+      <view class="page-body-form">
+        <view class="page-body-form-item" style="border-bottom: none;">
+          <input class="page-body-form-key" type="text" placeholder="key" name="key" value="{{key}}" bindinput="keyChange" disabled='true'></input>
+
+          <input class="page-body-form-value" type="text" placeholder="data" name="data" value="{{status_msg}}" disabled='true' bindinput="dataChange"></input>
+        </view>
+      </view>
+      <view class="page-body-buttons">
+      <block wx:if="{{user_status == 0}}">
+        <button class="page-body-button" type="primary">个人用户</button>
+        <button class="page-body-button"  >等待审核</button>
+        <button class="page-body-button" >企业管理员</button>
+       </block>
+       <block wx:elif="{{user_status == 1}}">
+        <button class="page-body-button" >个人用户</button>
+        <button class="page-body-button" type="primary" >等待审核</button>
+        <button class="page-body-button" >企业管理员</button>
+       </block>
+       <block wx:else>
+        <button class="page-body-button" >个人用户</button>
+        <button class="page-body-button"  >等待审核</button>
+        <button class="page-body-button" type="primary">企业管理员</button>
+       </block>
+      </view>
+    </view>
+  </view>
+
+  <modal title="{{dialog.title}}" hidden="{{dialog.hidden}}" no-cancel bindconfirm="confirm">{{dialog.content}}</modal>
+
+  <template is="footer" />
+</view>

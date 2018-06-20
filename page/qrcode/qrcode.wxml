@@ -1,0 +1,21 @@
+<!--pages/main/index.wxml-->
+<view class="container-box">
+    <view class="img-box">
+        <image bindtap="previewImg" mode="scaleToFill" src="{{imagePath}}"></image>
+    </view>
+    <form bindsubmit="formSubmit">
+        <view class="input-row">
+            <label style="margin:auto;text-align:center">未使用订单二维码</label>
+            <!-- <input name='url' value='' type="text" maxlength="255" placeholder="{{placeholder}}"/> -->
+        </view>
+        <!--<view class="input-row">
+            <label>金额</label>
+            <input name="money" type="number" maxlength="7"  placeholder="1000000"/>
+        </view>-->
+        <button bindtap='toIndex' class="mybtn" type="primary">回到首页</button>
+    </form>
+</view>
+<view hidden="{{maskHidden}}" class="mask"></view>
+<view class="canvas-box">
+  <canvas  hidden="{{canvasHidden}}" style="width: 686rpx;height: 686rpx;background:#f1f1f1;" canvas-id="mycanvas"/>
+</view>

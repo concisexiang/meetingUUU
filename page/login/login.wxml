@@ -1,0 +1,32 @@
+<view class="page">
+  <view class="page__hd">
+   <image class="login-logo" src="../../image/logo/logo.png"></image>
+
+    <text class="page__title">meetingUUU</text>
+    <text class="page__title">用户登录</text>
+    <text class="page__desc">表单</text>
+     
+  </view>
+  <form bindsubmit="formSubmit">
+    <view class="section">
+      <view class="section__title">帐号</view>
+      <input  type="text"  name="username" placeholder="请输入账号" />
+    </view>
+
+    <view class="section">
+      <view class="section__title">密码</view>
+      <input name="password" password="true" placeholder="请输入密码" />
+    </view>
+
+    <view class="btn-area">
+ 
+      <button class="page-body-button"  type="primary" formType="submit">提交</button>  
+      <view style="float:right">
+        <view style="color:black">还没有帐号？</view>
+        <navigator url='../register/register' style="color:blue">立即注册</navigator> 
+      </view>
+      
+    </view>
+ </form>
+
+</view>

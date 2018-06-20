@@ -1,0 +1,21 @@
+<view class="page">
+  <view class="page__hd">
+   <image class="login-logo" src="../../image/meeting/use.png"></image>
+
+    <text class="page__title">meetingUUU</text>
+     <text class="page__title">使用中</text>
+    <text class="page__desc">表单</text>
+     
+ <form bindsubmit="formSubmit">
+
+  
+   <view class="btn-area">
+      <button class="page-body-button" type="primary" bindtap="login" formType="submit" >点击归还会议室</button>
+      <view style="float:right" bindtap='toIndex'>回到首页
+
+      </view>
+  
+    </view>
+</form>
+  </view>
+</view>

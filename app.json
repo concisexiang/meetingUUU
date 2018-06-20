@@ -1,0 +1,67 @@
+{
+  "pages": [
+
+  
+
+    "page/login/login",
+    "page/myself/index",
+    "page/apply/apply",
+    "page/add-meeting-room/add-meeting-room",
+    "page/manager-meeting-room/manager-meeting-room",
+    "page/status/status",
+    "page/API/storage/storage",
+    "page/join-team/join-team",
+    "page/order-list/order-list",
+    "page/check-order-list/check-order-list",
+  "page/qrcode/qrcode",
+    "page/use-page/use-page",
+
+    "page/pay-page/pay-page",
+    "page/index/index",
+
+    "page/register/register",
+
+
+
+    "page/post-order/post-order",
+    "page/check-detail/check-detail"
+
+
+    
+
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "会议室管理平台",
+    "navigationBarBackgroundColor": "#ff9900",
+    "backgroundColor": "#fff",
+    "enablePullDownRefresh":true,
+    "backgroundTextStyle":"dark"
+  },
+  "tabBar": {
+    "color": "#cacaca",
+    "selectedColor": "#f40",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [{
+      "pagePath": "page/index/index",
+      "iconPath": "image/home.png",
+      "selectedIconPath": "image/home_hover.png",
+      "text": "首页"
+     },
+
+    {
+        "pagePath": "page/myself/index",
+        "iconPath": "image/mytb.png",
+        "selectedIconPath": "image/mytb_hover.png",
+        "text": "个人中心"
+     }]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false
+}

@@ -1,0 +1,50 @@
+<view class="page">
+
+  <view class="page__bd">
+  <block wx:if="{{listLength > 0}}">
+     <view bindtap="toGoodsDeatils" id="{{item.id}}" class="section section_gap" wx:for="{{meetingList}}" wx:for-item="item"> 
+    
+
+      <view class="section__ctn">
+         <image  src="{{item.img_meeting}}" class="section_img"></image> 
+    <view class="section_title">
+    
+      <text space="ensp" style='width:100%'>所属企业:{{item.company}}</text>
+    </view>
+    
+        <view class="section_note"></view>
+      </view>
+      <view class="section_empty"></view>
+     
+      <view class="section_ctn_check">
+
+<view style='width:100%'>
+    <view class="section_note">会议室编号:{{item.id}}</view>
+    <view class="section_note">租用价格:{{item.price}}</view>
+    <view class="section_note">推荐人数:{{item.recommended_number}}</view>
+    <view class="section_note">会议室地点:{{item.address}}</view>
+</view>  
+<view style='width:100%;float:left'>
+  <text>会议室状态：</text>
+  <text wx:if="{{item.status==1}}" style="color:#EE4000">已下单</text><text wx:elif="{{item.status==2}}" style="color:#EE4000">已租用</text><text style="color:#66CD00" wx:elif="{{item.status==0}}">未租用</text>
+  <button type="default" size="mini" bindtap='delMeeting' data-id="{{item.id}}" style="width:30%;float:right"> 删除 </button>  
+  
+</view>
+<view style='width:100%'>
+<block wx:if="{{item.status==1}}" >
+    <button type="default" size="mini">同意</button>   <button type="default" size="mini">拒绝</button> 
+  </block>
+</view>
+
+</view> 
+
+      
+       
+      </view>
+</block>
+<block wx:else>
+      <view class="section_title">请稍候加载中...</view>
+</block>
+  
+  </view>
+</view>

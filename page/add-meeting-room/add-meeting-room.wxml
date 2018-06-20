@@ -1,0 +1,35 @@
+<view class="page">
+  <view class="page__hd">
+   <image class="login-logo" src="../../image/logo/logo.png"></image>
+
+    <text class="page__title">meetingUUU</text>
+     <text class="page__title">会议室添加</text>
+    <text class="page__desc">表单</text>
+
+ <form bindsubmit="formSubmit">
+   <view class="section">
+      <view class="section__title">租金</view>
+      <input name="price" placeholder="please input here" />
+    </view>
+
+    <view class="section">
+      <view class="section__title">推荐人数(人)</view>
+      <input name="recommended_number"  placeholder="please input here" />
+    </view>
+
+    <view class="section">
+      <view class="section__title">会议室地址</view>
+      <input name="address"  placeholder="please input here" />
+    </view>
+
+
+
+   <view class="btn-area">
+      <button class="page-body-button" type="primary" bindtap="login" formType="submit" >提交申请</button>
+ 
+    </view>
+</form>
+
+
+    </view>
+</view>

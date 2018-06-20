@@ -1,0 +1,112 @@
+
+
+<block wx:if="{{isLogin == true}}">
+<!-- 已登陆 -->
+
+
+  <image src="{{userInfo.avatarUrl}}" class="userinfo-avatar" mode="aspectFill"  />
+  <view class="nickname" style='margin-top:50px'>{{userInfo.nickName}}</view>
+
+         <view class="gap-1"></view >
+     <view style="margin-left:20%"  wx:if="{{showId == false}}">
+     用户身份：
+<button type="default" size="mini" bindtap='funcShowCompanyId'  style="font-size:12px"> 查看团队编号 </button>  
+     </view>
+
+    <view wx:elif="{{showId == true}}" class="tb-toppest" bindtap='getLoginId' style='text-align:center;margin:auto'>
+      团队编号：{{companyId}}
+    </view >
+    <view class="gap-2"></view >
+   
+
+
+      <!-- 我的菜单 -->
+       <view  style="height: 730rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+
+         <view class="icon_class_right"  bindtap='applyCompany'>
+                <image src="/image/arrowright.png" class="arrowright"></image>
+        </view>
+        <view id="green" class="scroll-view-item bc_green" style="margin-top:20rpx;"  bindtap='applyCompany'>
+        
+            <image src="/image/personal/picon_footmark.png" class="icon_class"></image>
+            申请企业管理员
+        </view>
+
+          <view class="icon_class_right"  bindtap='toJoinTeam'>
+                <image src="/image/arrowright.png" class="arrowright"></image>
+        </view>
+        <view id="green" class="scroll-view-item bc_green" style="margin-top:20rpx;"  bindtap='toJoinTeam'>
+        
+            <image src="/image/personal/picon_footmark.png" class="icon_class"></image>
+            加入企业团队
+        </view>
+
+
+         <view class="icon_class_right"  bindtap='userStatus' >
+                    <image src="/image/arrowright.png" class="arrowright"></image>
+            </view>
+
+        <view id="red"  class="scroll-view-item bc_red" bindtap='userStatus'>
+           <image src="/image/personal/picon_coupon.png" class="icon_class" ></image>
+            用户状态查询
+        </view>
+
+
+            <view class="icon_class_right" bindtap='addMeeting'>
+                <image src="/image/arrowright.png" class="arrowright"></image>
+            </view>
+        <view id="yellow" class="scroll-view-item bc_yellow" bindtap='addMeeting'>
+            <image src="/image/personal/picon_address.png" class="icon_class"></image>
+            添加会议室
+        </view>
+   
+            <view class="icon_class_right" bindtap='managerMeeting'>
+                <image src="/image/arrowright.png" class="arrowright"></image>
+            </view>
+        <view id="blue" class="scroll-view-item bc_blue" bindtap='managerMeeting'>
+            <image src="/image/personal/picon_tel.png" class="icon_class"></image>
+           管理会议室
+        </view>
+          
+   
+        <view class="icon_class_right" bindtap='toCheckOrder'>
+                <image src="/image/arrowright.png" class="arrowright"></image>
+        </view>
+        <view id="grey" class="scroll-view-item bc_blue" bindtap='toCheckOrder'>
+            <image src="/image/personal/picon_setting.png" class="icon_class"></image>
+            审核会议室订单
+           
+        </view>
+
+        <view class="icon_class_right" bindtap='toOrderList'>
+                <image src="/image/arrowright.png" class="arrowright"></image>
+        </view>
+        <view id="grey" class="scroll-view-item bc_blue" bindtap='toOrderList'>
+            <image src="/image/personal/picon_setting.png" class="icon_class"></image>
+            租用会议室订单
+           
+        </view>
+
+          <view class="icon_class_right" bindtap='toLogin'>
+                <image src="/image/arrowright.png" class="arrowright"></image>
+        </view>
+        <view id="grey" class="scroll-view-item bc_blue" bindtap='toLogin'>
+            <image src="/image/personal/picon_setting.png" class="icon_class"></image>
+            退出当前帐号
+           
+        </view>
+
+
+ 
+     
+      </view>
+      <!-- /我的菜单 -->
+
+</block>
+<block wx:else>
+<!-- 未登陆 -->
+  <image src="{{no_login}}" class="userinfo-avatar" mode="aspectFill"  />
+
+  <button style='margin-top:50px' wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+</block>
+

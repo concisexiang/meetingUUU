@@ -1,0 +1,61 @@
+
+<block wx:if="{{isList == true}}">
+    <view bindtap="toCheckDetail" data-id="{{item.id}}" id="{{item.id}}" class="section section_gap" wx:for="{{dataList}}" wx:for-item="item"> 
+              
+                <!--第一部分-->
+              <view class="section__ctn">
+                <!-- 商品图片 -->
+                <image  src="{{item.img_meeting}}" class="section_img"></image> 
+                <!-- 商品名称 -->
+            <view class="section_title">
+            
+              <text space="ensp" style='width:100%'>所属企业:{{item.company}}</text>
+            </view>
+            
+            <!-- <image src="{{img_meeting}}" class="section_icon"></image>  -->
+                <!-- 订单状态 -->
+                <!-- <view class="section_status">
+                <text   wx:if="{{item.status==0}}">等待商家接单中...</text >
+                <text  wx:elif="{{item.status==1}}">商家已接单，发货中...</text >
+                <text   wx:elif="{{item.status==2}}">交易完成</text >
+                <text   wx:else>等待商家接单中...</text >
+                </view> -->
+                <view class="section_note"></view>
+              </view>
+              <view class="section_empty"></view>
+              <!-- 第二部分 -->
+            
+              <view class="section_ctn_check">
+
+        <view style='width:100%'>
+           <view class="section_note">订单id:{{item.id}}</view>
+            <view class="section_note">会议室编号:{{item.mid}}</view>
+            <view class="section_note">租用价格:{{item.price}}</view>
+            <!-- <view class="section_note">推荐人数:{{item.recommended_number}}</view> -->
+            <!-- <view class="section_note">会议室地点:{{item.address}}</view> -->
+        </view>  
+        <view style='width:100%;float:left'>
+          <!-- <button type="default" size="mini" style="width:30%;float:left"> 查询用户 </button>   -->
+          <text>会议室状态：</text>
+          <text wx:if="{{item.status==1}}" style="color:#EE4000">待付款</text>
+          <text wx:elif="{{item.status==2}}" style="color:#EE4000">已拒绝</text>
+         <text wx:if="{{item.status==4}}" style="color:#EE4000">使用中</text>
+                    <text wx:elif="{{item.status==5}}" style="color:#EE4000">订单完成</text>
+          <text style="color:#66CD00" wx:elif="{{item.status==0}}">待审核</text>
+                   <text wx:if="{{item.status==5}}" style="color:#EE4000">已完成订单</text>
+
+          
+        </view>
+ 
+            <!-- <view class="section_money">实际支付:{{item.money}}(元) -->
+        <!-- </view> -->
+
+        </view> 
+
+   </view>
+
+   </block>
+<block wx:elif="{{isList == false}}">
+暂时没有订单列表...
+</block>
+

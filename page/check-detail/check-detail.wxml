@@ -1,0 +1,56 @@
+<view class="page">
+
+
+  <view class="page__hd">
+   <image class="login-logo" src="../../image/logo/logo.png"></image>
+
+    <text class="page__title">meetingUUU</text>
+     <text class="page__title">审核租用申请</text>
+    <text class="page__desc">表单</text>
+
+
+ <form bindsubmit="formSubmit">
+   <view class="section">
+      <view class="section__title">主题：{{dataInfo.theme}}</view>
+   
+    </view>
+
+    <view class="section">
+      <view class="section__title">参与人数:{{dataInfo.people_number}}</view>
+  
+    </view>
+
+    <view class="section">
+      <view class="section__title">用途:{{dataInfo.explain_use}}</view>
+ 
+    </view>
+
+    <view class="section">
+      <view class="section__title">用户帐号:{{dataInfo.username}}</view>
+
+    </view>
+
+   <view class="btn-area">
+
+     <block wx:if="{{dataInfo.status == 3}}">
+        该订单已完成
+     </block>
+         <block wx:if="{{dataInfo.status == 2}}">
+        该订单已拒绝
+     </block>
+     <block wx:elif="{{dataInfo.status == 1}}">
+        待付款
+     </block>
+     <block wx:elif="{{dataInfo.status == 4}}">
+        使用中
+     </block>
+     <block wx:elif="{{dataInfo.status == 0}}">
+          <button class="page-body-button" type="primary" bindtap="checkStatus" data-id="1" formType="submit" >同意</button>
+          <button class="page-body-button" type="primary" bindtap="checkStatus" formType="submit" data-id="2" style="background-color:red">拒绝</button>
+     </block>
+    
+    
+    </view>
+</form>
+  </view>
+</view>
